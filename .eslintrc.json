@@ -9,6 +9,13 @@
     "plugin:prettier/recommended",
     "standard-with-typescript"
   ],
+  "ignorePatterns": [
+    "node_modules/",
+    "dist/",
+    "build/",
+    "**/*.cjs",
+    "**/*.node.json"
+  ],
   "overrides": [],
   "parserOptions": {
     "ecmaVersion": "latest",
