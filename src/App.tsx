@@ -1,7 +1,18 @@
+import { Routes, Route } from 'react-router-dom';
 import './App.css';
+import Layout from './components/Layout/Layout';
+import Home from './routes/Home/Home';
+import NoMatch from './routes/NoMatch/NoMatch';
 
 function App() {
-  return <h1 className="text-3xl font-bold underline">Hello world!</h1>;
+  return (
+    <Routes>
+      <Route element={<Layout />}>
+        <Route path="/" element={<Home />} />
+        <Route path="*" element={<NoMatch />} />
+      </Route>
+    </Routes>
+  );
 }
 
 export default App;
