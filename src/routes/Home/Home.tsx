@@ -1,4 +1,14 @@
+import { redirect, useNavigate } from 'react-router-dom';
+import { ROUTES } from '../../constants/routes';
+
 const Home = () => {
+  const navigate = useNavigate();
+  const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
+    const route = e.currentTarget.name;
+
+    navigate(route);
+  };
+
   return (
     <div>
       <div className="flex justify-center items-center my-5">
@@ -12,16 +22,36 @@ const Home = () => {
       <div>
         <div className="flex justify-center gap-10">
           <div>
-            <button className="text-9xl">🇨🇦</button>
+            <button
+              onClick={handleClick}
+              className="text-9xl"
+              name={ROUTES.CANADA}>
+              🇨🇦
+            </button>
           </div>
           <div>
-            <button className="text-9xl">🇺🇸</button>
+            <button
+              onClick={handleClick}
+              className="text-9xl"
+              name={ROUTES.USA}>
+              🇺🇸
+            </button>
           </div>
           <div>
-            <button className="text-9xl">🇩🇪</button>
+            <button
+              onClick={handleClick}
+              className="text-9xl"
+              name={ROUTES.GERMANY}>
+              🇩🇪
+            </button>
           </div>
           <div>
-            <button className="text-9xl">🇫🇷</button>
+            <button
+              onClick={handleClick}
+              className="text-9xl"
+              name={ROUTES.FRANCE}>
+              🇫🇷
+            </button>
           </div>
         </div>
       </div>
